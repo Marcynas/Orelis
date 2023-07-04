@@ -80,7 +80,9 @@ export default {
 
       // Check if the condition text exists in the mapping
       if (conditionText in conditionMap) {
-        return conditionMap[conditionText];
+        return new URL(`/src/assets/all/${
+            conditionMap[conditionText]
+        }`, import.meta.url).href
       } else {
         return null; // Return null if no matching SVG icon found
       }
@@ -101,7 +103,9 @@ export default {
         11: "uv-index-11.svg",
       };
       if (uv in uvMap) {
-        return uvMap[uv];
+        return new URL(`/src/assets/all/${
+            uvMap[uv]
+        }`, import.meta.url).href
       } else {
         return null; // Return null if no matching SVG icon found
       }
@@ -126,16 +130,18 @@ export default {
         12: "wind-beaufort-12.svg",
       };
       if (windBeaufort in windBeaufortMap) {
-        return windBeaufortMap[windBeaufort];
+        return new URL(`/src/assets/all/${
+            windBeaufortMap[windBeaufort]
+        }`, import.meta.url).href
       } else {
         return null; // Return null if no matching SVG icon found
       }
     },
     preassureIcon(preassure_mb) {
       if (preassure_mb <= 1013) {
-        return "pressure-low.svg";
+        return new URL(`/src/assets/all/pressure-low.svg`, import.meta.url).href;
       } else {
-        return "pressure-high.svg";
+        return new URL(`/src/assets/all/pressure-high.svg`, import.meta.url).href;
       }
     },
   },
@@ -148,10 +154,7 @@ export default {
     >
     <template v-if="weather">
       <img
-        :src="`/src/assets/all/${getWeatherIcon(
-          weather.current.condition.text,
-          weather.current.is_day
-        )}`"
+        :src="getWeatherIcon(weather.current.condition.text,weather.current.is_day)"
         :alt="weather.current.condition.text"
         class="w-24 h-24"/>
       <h1 class="text-4xl font-bold">{{ weather.current.temp_c }}°C</h1>
@@ -160,17 +163,17 @@ export default {
         class="flex flex-row justify-center items-center border-t-2 border-blue-900 w-full mt-4"
       >
         <img
-          :src="`/src/assets/all/${getUvIcon(weather.current.uv)}`"
+          :src="getUvIcon(weather.current.uv)"
           :alt="`UV Index: ${weather.current.uv}`"
           class="w-16 h-16"
         />
         <img
-          :src="`/src/assets/all/${windBeaufortIcon(weather.current.wind_kph)}`"
+          :src="windBeaufortIcon(weather.current.wind_kph)"
           :alt="`Wind Beaufort: ${weather.current.wind_kph}`"
           class="w-16 h-16"
         />
         <img
-          :src="`/src/assets/all/${preassureIcon(weather.current.pressure_mb)}`"
+          :src="preassureIcon(weather.current.pressure_mb)"
           :alt="`Preassure: ${weather.current.pressure_mb}`"
           class="w-16 h-16"
         />
