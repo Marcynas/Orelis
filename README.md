@@ -16,7 +16,7 @@ Icons from [Meteocons](https://github.com/basmilius/weather-icons).
 ---
 
 <div class="flex flex-col md:flex-row justify-center items-center">
-  <img src="./gifs/vilnius.gif" width="114" height="153" />
+  <img src="./gifs/Vilnius.gif" width="114" height="153" />
   <img src="./gifs/Sao.gif" width="114" height="153" />
   <img src="./gifs/San.gif" width="114" height="153" />
 </div>
