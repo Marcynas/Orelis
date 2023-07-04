@@ -18,7 +18,7 @@ export default {
     fetchData() {
       const { latitude, longitude } = this.coords;
       fetch(
-        `http://api.weatherapi.com/v1/current.json?key=7be11dcae1594fa885083538230307&q=${latitude},${longitude}`,
+        `https://api.weatherapi.com/v1/current.json?key=7be11dcae1594fa885083538230307&q=${latitude},${longitude}`,
         {
           method: "GET",
         }
