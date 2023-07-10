@@ -21,6 +21,6 @@ const props = defineProps({
         :alt="forecastday.day.condition.text"
         class="w-24 h-24"/>
       <h1 class="text-4xl font-bold">{{ forecastday.day.avgtemp_c }}°C</h1>
-      <h4 class="text-l font-bold">{{ forecastday.day.condition.text }}</h4>
+      <h2 class="text-l font-bold">{{ forecastday.day.condition.text }}</h2>
   </div>
 </template>

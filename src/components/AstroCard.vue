@@ -21,7 +21,7 @@ const props = defineProps({
           :alt="astro.sunrise"
           class="w-16 h-16"
         />
-        <h4 class="text-xl font-bold">{{ astro.sunrise }}</h4>
+        <h1 class="text-xl font-bold">{{ astro.sunrise }}</h1>
       </div>
 
       <div class="flex flex-col items-center justify-center  m-4">
@@ -31,7 +31,7 @@ const props = defineProps({
           class="w-16 h-16"
         />
 
-        <h4 class="text-xl font-bold">{{ astro.sunset }}</h4>
+        <h1 class="text-xl font-bold">{{ astro.sunset }}</h1>
       </div>
     </div>
 
@@ -44,7 +44,7 @@ const props = defineProps({
         class="w-16 h-16"
       />
 
-      <h4 class="text-xl font-bold">{{ astro.moonrise }}</h4>
+      <h1 class="text-xl font-bold">{{ astro.moonrise }}</h1>
     </div>
       <div class="flex flex-col items-center justify-center m-4">
         <img
@@ -53,7 +53,7 @@ const props = defineProps({
           class="w-16 h-16"
         />
 
-        <h4 class="text-xl font-bold">{{ astro.moonset }}</h4>
+        <h1 class="text-xl font-bold">{{ astro.moonset }}</h1>
       </div>
       
     </div>

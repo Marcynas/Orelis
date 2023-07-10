@@ -23,7 +23,7 @@ const props = defineProps({
           )
             " :alt="weather.current.condition.text" class="w-24 h-24" />
           <h1 class="text-4xl font-bold">{{ weather.current.temp_c }}°C</h1>
-          <h4 class="text-xl font-bold">{{ weather.current.condition.text }}</h4>
+          <h2 class="text-xl font-bold">{{ weather.current.condition.text }}</h2>
           <div class="flex flex-row justify-center items-center border-t-2 border-blue-900 w-full mt-4">
             <img :src="getUvIcon(weather.current.uv)" :alt="`UV Index: ${weather.current.uv}`" class="w-16 h-16" />
             <img :src="windBeaufortIcon(weather.current.wind_kph)" :alt="`Wind Beaufort: ${weather.current.wind_kph}`"
