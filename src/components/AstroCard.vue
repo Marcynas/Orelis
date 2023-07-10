@@ -1,6 +1,5 @@
 <script setup>
 import { defineProps } from "vue";
-import { getMoonIcon } from "../utils/iconSelector";
 
 const props = defineProps({
   astro: {
@@ -17,7 +16,7 @@ const props = defineProps({
     <div class="flex flex-row">
       <div class="flex flex-col m-4 items-center justify-center">
         <img
-          :src="'/src/assets/all/sunrise.svg'"
+          :src="`./src/assets/all/sunrise.svg`"
           :alt="astro.sunrise"
           class="w-16 h-16"
         />
