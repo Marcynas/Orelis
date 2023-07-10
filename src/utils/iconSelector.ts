@@ -136,4 +136,22 @@ function getMoonIcon(moonPhase) {
   }
 }
 
-export { getWeatherIcon, getUvIcon, windBeaufortIcon, preassureIcon, getMoonIcon };
+function getAstroIcon(astro) {
+  // Map moon phase to corresponding SVG icons
+  const astroMap = {
+    "Sunrise": "sunrise.svg",
+    "Sunset": "sunset.svg",
+    "Moonrise": "moonrise.svg",
+    "Moonset": "moonset.svg",
+  };
+  if (astro in astroMap) {
+    return new URL(
+      `/src/assets/all/${astroMap[astro]}`,
+      import.meta.url
+    ).href;
+  } else {
+    return null; // Return null if no
+  }
+}
+
+export { getWeatherIcon, getUvIcon, windBeaufortIcon, preassureIcon, getMoonIcon, getAstroIcon };

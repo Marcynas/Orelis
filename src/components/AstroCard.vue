@@ -1,5 +1,6 @@
 <script setup>
 import { defineProps } from "vue";
+import { getAstroIcon } from "../utils/iconSelector";
 
 const props = defineProps({
   astro: {
@@ -16,17 +17,16 @@ const props = defineProps({
     <div class="flex flex-row">
       <div class="flex flex-col m-4 items-center justify-center">
         <img
-          :src="`./src/assets/all/sunrise.svg`"
+          :src="getAstroIcon('Sunrise')"
           :alt="astro.sunrise"
           class="w-16 h-16"
         />
-
         <h4 class="text-xl font-bold">{{ astro.sunrise }}</h4>
       </div>
 
       <div class="flex flex-col items-center justify-center  m-4">
         <img
-          :src="'/src/assets/all/sunset.svg'"
+          :src="getAstroIcon('Sunset')"
           :alt="astro.sunset"
           class="w-16 h-16"
         />
@@ -39,7 +39,7 @@ const props = defineProps({
     <div class="flex flex-row">
         <div class="flex flex-col items-center justify-center m-4">
       <img
-        :src="'/src/assets/all/moonrise.svg'"
+        :src="getAstroIcon('Moonrise')"
         :alt="astro.moonrise"
         class="w-16 h-16"
       />
@@ -48,7 +48,7 @@ const props = defineProps({
     </div>
       <div class="flex flex-col items-center justify-center m-4">
         <img
-          :src="'/src/assets/all/moonset.svg'"
+          :src="getAstroIcon('Moonset')"
           :alt="astro.moonset"
           class="w-16 h-16"
         />
