@@ -1,5 +1,12 @@
 // Description: This file contains functions that map weather text to corresponding SVG icons
-function getWeatherIcon(conditionText, isDay) {
+
+/**
+ * function to get weather icon url based on condition text and day/night
+ * @param conditionText from weather api ex: "Sunny" or "Partly cloudy"
+ * @param isDay boolean to check if it is day or night
+ * @returns icon url
+ */
+function getWeatherIcon(conditionText, isDay): string | null {
   // Map condition text to corresponding SVG icons
   const conditionMap = {
     "Sunny": isDay ? "clear-day.svg" : "clear-night.svg",
@@ -56,7 +63,12 @@ function getWeatherIcon(conditionText, isDay) {
   }
 }
 
-function getUvIcon(uv) {
+/**
+ * function to get UV index icon url based on UV index
+ * @param uv UV index from weather api
+ * @returns icon url
+ */
+function getUvIcon(uv): string | null {
   // Map UV index to corresponding SVG icons
   const uvMap = {
     1: "uv-index-1.svg",
@@ -78,6 +90,11 @@ function getUvIcon(uv) {
   }
 }
 
+/**
+ * function to get wind beaufort scale icon url based on wind speed
+ * @param wind_kph wind speed in kph from weather api
+ * @returns icon url
+ */
 function windBeaufortIcon(wind_kph) {
   // convert wind speed from kph to beaufort scale
   const windBeaufort = Math.round(wind_kph / 3.6);
@@ -106,7 +123,13 @@ function windBeaufortIcon(wind_kph) {
     return null; // Return null if no matching SVG icon found
   }
 }
-function preassureIcon(preassure_mb) {
+
+/**
+ * function to get wind direction icon url based on wind direction
+ * @param windDegree wind direction in degree from weather api
+ * @returns icon url
+ */
+function preassureIcon(preassure_mb): string {
   if (preassure_mb <= 1013) {
     return new URL(`/src/assets/all/pressure-low.svg`, import.meta.url).href;
   } else {
@@ -114,7 +137,12 @@ function preassureIcon(preassure_mb) {
   }
 }
 
-function getMoonIcon(moonPhase) {
+/**
+ * function to get moon phase icon url based on moon phase
+ * @param moonPhase moon phase from weather api e.g. "Waning Gibbous" or "Waxing Gibbous"
+ * @returns icon url
+ */
+function getMoonIcon(moonPhase): string | null {
   // Map moon phase to corresponding SVG icons
   const moonPhaseMap = {
     "Waning Gibbous": "moon-waning-gibbous.svg",
@@ -136,7 +164,12 @@ function getMoonIcon(moonPhase) {
   }
 }
 
-function getAstroIcon(astro) {
+/**
+ * function to get astro icon url based on astro phase
+ * @param astro phase of the sun or moon e.g. "Sunrise" or "Moonset"
+ * @returns icon url
+ */
+function getAstroIcon(astro): string | null {
   // Map moon phase to corresponding SVG icons
   const astroMap = {
     "Sunrise": "sunrise.svg",
@@ -150,7 +183,7 @@ function getAstroIcon(astro) {
       import.meta.url
     ).href;
   } else {
-    return null; // Return null if no
+    return null; // Return null if no matching SVG icon found
   }
 }
 

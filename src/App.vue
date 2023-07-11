@@ -50,37 +50,37 @@ if (time >= 6 && time < 12) {
 </script>
 
 <template>
-  <div class="justify-center items-center min-h-screen flex select-none
-  "
-  :class="bgGradient
-  ">
+  <div
+    class="justify-center items-center min-h-screen flex select-none"
+    :class="bgGradient"
+  >
     <template v-if="weather">
-      <WeatherCard :weather="weather" 
-        :class="show ? 'opacity-0 scale-0' : 'opacity-100' "
-        class="absolute transition-opacity duration-500 ease-in-out z-10
-          "
-          @click="show = true"
-        /> 
+      <WeatherCard
+        :weather="weather"
+        :class="show ? 'opacity-0 scale-0' : 'opacity-100'"
+        class="absolute transition-opacity duration-500 ease-in-out z-10"
+        @click="show = true"
+      />
 
-      <div class=" 
-      flex flex-col 
-      lg:grid grid-cols-2 grid-rows-2 
-      transition-all duration-500 ease-in-out transform 
-        "  @click="show = false"
-        :class="show ? 'opacity-100' : 'opacity-0 hidden'">
+      <div
+        class="flex flex-col lg:grid grid-cols-2 grid-rows-2 transition-all duration-500 ease-in-out transform"
+        @click="show = false"
+        :class="show ? 'opacity-100' : 'opacity-0 hidden'"
+      >
+        <WeatherCard :weather="weather" />
 
-        <WeatherCard :weather="weather" 
-        /> 
-        
         <AstroCard :astro="astro" />
 
-        <div class="m-4 p-4 bg-white bg-opacity-20 rounded-xl hover:shadow-lg transition-shadow duration-300 ease-in-out flex flex-col lg:flex-row justify-center
-          overflow-hidden col-span-2">
+        <div
+          class="m-4 p-4 bg-white bg-opacity-20 rounded-xl hover:shadow-lg transition-shadow duration-300 ease-in-out flex flex-col lg:flex-row justify-center overflow-hidden col-span-2"
+        >
           <!-- slice forecast -->
-          <WeatherForecastCard v-for="forecastday in forecast.slice(1, 7)" :forecastday="forecastday"
-            :key="forecastday.date" />
+          <WeatherForecastCard
+            v-for="forecastday in forecast.slice(1, 7)"
+            :forecastday="forecastday"
+            :key="forecastday.date"
+          />
         </div>
-
       </div>
     </template>
     <template v-else> Loading weather... </template>
