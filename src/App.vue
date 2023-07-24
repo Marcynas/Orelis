@@ -3,7 +3,6 @@ import WeatherCard from "./components/WeatherCard.vue";
 import { useGeolocation } from "@vueuse/core";
 import { ref } from "vue";
 import { getWeather } from "../src/utils/weatherApi";
-import { getHoroscope } from "../src/utils/horoscopeApi";
 import WeatherForecastCard from "./components/WeatherForecastCard.vue";
 import AstroCard from "./components/AstroCard.vue";
 // watch
@@ -14,7 +13,6 @@ const weather = ref(null);
 const forecast = ref(null);
 const astro = ref(null);
 const show = ref(false);
-const horoscope = ref(null);
 
 const isReady = () => {
   return (
@@ -25,10 +23,6 @@ const isReady = () => {
 //wait for coords to be ready
 watch(isReady, async () => {
   if (isReady()) {
-    getHoroscope().then((data) => {
-      horoscope.value = data;
-      console.log(horoscope.value);
-    });
     getWeather(
       coords.value.latitude,
       coords.value.longitude,
