@@ -26,7 +26,7 @@ watch(isReady, async () => {
     getWeather(
       coords.value.latitude,
       coords.value.longitude,
-      "7be11dcae1594fa885083538230307"
+      import.meta.env.WEATHER_API_KEY
     ).then((data) => {
       weather.value = data;
       forecast.value = data.forecast.forecastday;
@@ -34,6 +34,7 @@ watch(isReady, async () => {
     });
   }
 });
+
 
 // set bgGradient based on time of day
 const bgGradient = ref("bg-gradient-to-b from-blue-500 to-blue-300");
