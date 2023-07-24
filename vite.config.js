@@ -5,7 +5,7 @@ import { VitePWA } from "vite-plugin-pwa";
 // https://vitejs.dev/config/
 export default defineConfig({
   // set base path as /Orelis/ for github pages and / for vercel
-  base: process.env.NODE_ENV === "pages" ? "/Orelis/" : "/",
+  base: process.env.NODE_ENV === "Production" ? "/" : "/Orelis/",
   plugins: [
     vue(),
     VitePWA({
