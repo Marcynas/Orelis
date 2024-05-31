@@ -33,6 +33,7 @@ function getWeatherIcon(conditionText, isDay): string | null {
     "Patchy light rain": "rain.svg",
     "Light rain": "rain.svg",
     "Moderate rain at times": "rain.svg",
+    "Moderate or heavy rain with thunder": "thunderstorms.svg",
     "Moderate rain": "rain.svg",
     "Heavy rain at times": "rain.svg",
     "Heavy rain": "rain.svg",
