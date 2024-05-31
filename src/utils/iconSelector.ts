@@ -50,6 +50,7 @@ function getWeatherIcon(conditionText, isDay): string | null {
     "Ice pellets": "sleet.svg",
     "Light rain shower": "rain.svg",
     "Moderate or heavy rain shower": "rain.svg",
+    "Patchy rain nearby": "drizzle.svg"
     // Add more condition text mappings as needed
   };
 
